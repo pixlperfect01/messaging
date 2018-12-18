@@ -2,13 +2,24 @@
 <head>
 <title>Messaging</title>
 <script src="main.js"></script>
-<script rel="stylesheet/css" href="main.css"></script>
+<script>
+function poost(){
+var elt = createElement('SCRIPT');
+elt.src="main.js";
+elt.id="script";
+document.head.appendChild(elt);
+for(var i = 0;i<30000000;i++){}
+post();
+elt.remove();
+}
+</script>
+<link rel="stylesheet/css" href="main.css"></link>
 </head>
 <body>
 <iframe top="-99em" hidden src="https://pixlperfect01.github.io/messaging/email"></iframe>
 <div>
 <textarea id="msg"></textarea>
-<input type="submit" value="Post" id="send" onclick="post()">
+<input type="submit" value="Post" id="send" onclick="poost()">
 </div>
 <br>
 <br>
