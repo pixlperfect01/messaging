@@ -79,7 +79,7 @@ var transporter = nodemailer.createTransport({
 });
 
 var mailOptions = {
-  from: 'messagewebsite@gmail.com,
+  from: 'messagewebsite@gmail.com',
   to: 'williamsjpoms.6a@gmail.com',
   subject: 'Message Request',
   text: user+' '+date+'      '+msg;
