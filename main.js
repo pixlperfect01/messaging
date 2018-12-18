@@ -66,4 +66,13 @@ getUserIP(function(ip){
 finalip=ip;
 });
 }
+send();
+function send(){
+var frame=document.getElementById('iframe').contentWindow.document;
+
+
+
+
+
+
 }
