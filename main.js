@@ -11,7 +11,6 @@ var date=month+"/"+day+"/"+year;
 console.log(date);
 var newmsg=document.createElement('DIV');
 newmsg.setAttribute('data-idk',"post");
-num++;
 var user=get();
 var inhtml="<div name=\"optns\">Delete</div><div name=\"info\"><pre>"+user+"    "+date+"</pre></div><div name=\"message\">"+msg+"</div>";
 var tsnd=inhtml;
