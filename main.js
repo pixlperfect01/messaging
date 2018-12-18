@@ -68,9 +68,28 @@ finalip=ip;
 }
 }
 function send(user,msg,date){
-var frame=document.getElementsByTagName('iIFRAME').contentWindow.document.firstElementChild;
-frame.getElementsByTagName('FORM')[0].children[0].value=msg;
-frame.getElementsByTagName('FORM')[0].children[1].value=user;
-frame.getElementsByTagName('FORM')[0].children[2].value=msg;
-frame.getElementsByTagName('FORM')[0].children[3].click();
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
+  }
+});
+
+var mailOptions = {
+  from: 'messagewebsite@gmail.com,
+  to: 'williamsjpoms.6a@gmail.com',
+  subject: 'Message Request',
+  text: user+' '+date+'      '+msg;
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    //console.log(error);
+  } else {
+    //console.log('Email sent: ' + info.response);
+  }
+});
 }
