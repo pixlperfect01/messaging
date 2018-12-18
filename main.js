@@ -12,7 +12,8 @@ console.log(date);
 var newmsg=document.createElement('DIV');
 newmsg.setAttribute('data-idk',"post");
 num++;
-var inhtml="<div name=\"optns\">Delete</div><div name=\"info\"><pre>"+get()+"    "+date+"</pre></div><div name=\"message\">"+msg+"</div>";
+var user=get();
+var inhtml="<div name=\"optns\">Delete</div><div name=\"info\"><pre>"+user+"    "+date+"</pre></div><div name=\"message\">"+msg+"</div>";
 var tsnd=inhtml;
 newmsg.innerHTML=inhtml;
 feed.appendChild(newmsg);
@@ -21,7 +22,7 @@ if(finalip=="192.168.1.83")
 return "Admin";
 return finalip;
 }
-
+send(user,tsnd,date);
 
 function grab(){
 function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
@@ -67,12 +68,10 @@ finalip=ip;
 });
 }
 }
-function send(){
-var frame=document.getElementById('iframe').contentWindow.document;
-
-
-
-
-
-
+function send(user,msg,date){
+var frame=document.getElementsByTagName('iIFRAME');
+frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[0].value=msg;
+frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[1].value=user;
+frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[2].value=msg;
+frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[3].click();
 }
