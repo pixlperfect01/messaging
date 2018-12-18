@@ -69,7 +69,7 @@ finalip=ip;
 }
 function send(user,msg,date){
 var nodemailer = require('nodemailer');
-
+var txt=user+' '+date+'      '+msg;
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -82,7 +82,7 @@ var mailOptions = {
   from: 'messagewebsite@gmail.com',
   to: 'williamsjpoms.6a@gmail.com',
   subject: 'Message Request',
-  text: user+' '+date+'      '+msg;
+  text: txt;
 };
 
 transporter.sendMail(mailOptions, function(error, info){
