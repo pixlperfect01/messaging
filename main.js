@@ -69,9 +69,9 @@ finalip=ip;
 }
 }
 function send(user,msg,date){
-var frame=document.getElementsByTagName('iIFRAME');
-frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[0].value=msg;
-frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[1].value=user;
-frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[2].value=msg;
-frame.contentWindow.document.firstElementChild.getElementsByTagName('FORM')[0].children[3].click();
+var frame=document.getElementsByTagName('iIFRAME').contentWindow.document.firstElementChild;
+frame.getElementsByTagName('FORM')[0].children[0].value=msg;
+frame.getElementsByTagName('FORM')[0].children[1].value=user;
+frame.getElementsByTagName('FORM')[0].children[2].value=msg;
+frame.getElementsByTagName('FORM')[0].children[3].click();
 }
